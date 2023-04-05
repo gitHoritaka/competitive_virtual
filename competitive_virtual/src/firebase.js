@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import {getFirestore} from "firebase/firestore";
-import {getStorage} from 'firebase/storage';
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -10,10 +9,9 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_SENDER_ID,
 };
-console.log(firebaseConfig.apiKey);
-console.log(process.env.REACT_APP_FIREBASE_API_KEY)
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
-export const db = getFirestore(app);
-export const storage = getStorage();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+export {app,auth,provider,db}
 

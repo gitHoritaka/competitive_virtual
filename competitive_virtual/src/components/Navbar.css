@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50px;
+    background-color: blueviolet;
+    gap: 55px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+nav a:hover {
+    color:cadetblue;
+
+}
