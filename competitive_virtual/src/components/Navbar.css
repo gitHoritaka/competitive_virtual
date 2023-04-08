@@ -3,8 +3,9 @@ nav {
     justify-content: center;
     align-items: flex-end;
     height: 50px;
-    background-color: blueviolet;
+    background-color: black;
     gap: 55px;
+    margin-bottom: 0px;
 }
 nav a {
     text-decoration: none;

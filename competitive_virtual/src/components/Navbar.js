@@ -6,10 +6,14 @@ const Navbar = ({isAuth}) => {
   return (
     <nav>
         <Link to = '/'>Home</Link>
-        <Link to = '/addproblem'>Add Problem</Link>
-        {!isAuth ? 
-        <Link to = '/login'>Login</Link>
-        : <Link to = '/logout'>Logout</Link>}
+        {!isAuth ? (
+        <Link to = '/login'>Login</Link>)
+        : (
+        <>
+        <Link to='/addproblem'>Add Problem</Link>
+        <Link to='/logout'>Logout</Link>
+        </>
+        )}
 
     </nav>
   )
