@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {db,clname} from '../firebase';
 import {collection,getDocs} from 'firebase/firestore';
 import Problem from './Problem';
+import axios from "axios";
 import "./Home.css"
 
 
@@ -13,6 +14,14 @@ const Home = () => {
             setProblemList(firebase_data.docs.map((doc) => ({...doc.data() ,id:doc.id})));
             console.log(problemList);
         };
+        const isServerConnection = async() =>{
+            const url = "http://127.0.0.1:8000/";
+            axios.get(url).then((result) =>{
+                console.log(result.data);
+            })
+        }
+
+        isServerConnection();
         getProlems();
     },[])
   return (
