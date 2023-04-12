@@ -11,6 +11,7 @@ const Login = ({setIsAuth}) => {
             console.log(result);
             setIsAuth(true);
             localStorage.setItem('isAuth',true);
+            localStorage.setItem('user_id',auth.currentUser.uid)
             navigate("/");
         });
     }

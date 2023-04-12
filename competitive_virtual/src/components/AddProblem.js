@@ -20,7 +20,7 @@ const AddProblem = ({isAuth}) => {
   const HandleSubmit = (event) =>{
     event.preventDefault();
     console.log("submit");
-    addDoc(collection(db,"ProblemData"),{
+    addDoc(collection(db,auth.currentUser.uid),{
       url: url,
       title: title,
       description :description,

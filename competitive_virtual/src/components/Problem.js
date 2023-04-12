@@ -5,7 +5,7 @@ import "./Problem.css"
 
 const Problem = ({problem,id}) => {
     const HandleDalete = async (id)=>{
-        await deleteDoc(doc(db,clname,id));
+        await deleteDoc(doc(db,id));
         window.location.href ='/';
     };
   return (
