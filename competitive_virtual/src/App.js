@@ -13,9 +13,9 @@ function App() {
     <Router >
       <Navbar isAuth = {isAuth}/>
       <Routes>
-        <Route path = "/" element = {<Home/>}></Route>
-        <Route path = "/addproblem" element = {<AddProblem isAuth = {isAuth}/>}></Route>
-        <Route path = "/login" element = {<Login setIsAuth = {setIsAuth}/>}></Route>
+        <Route path = "/" element = {<Home isAuth={isAuth} />}></Route>
+        <Route path = "/addproblem" element = {<AddProblem isAuth = {isAuth} />}></Route>
+        <Route path = "/login" element = {<Login setIsAuth = {setIsAuth} />}></Route>
         <Route path = "/logout" element = {<Logout setIsAuth = {setIsAuth}/>}></Route>
       </Routes>
     </Router>
