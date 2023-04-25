@@ -1,0 +1,39 @@
+.ProblemContainerBack{
+    background-color: gray;
+}
+
+.ProblemContainer {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    gap: 20px;
+    margin: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+}
+.TitleProblemList{
+    color: black;
+    font-weight: large;
+}
+.Home{
+    background-color: black;
+    height: 1000px;
+}
+.Button{
+    display: block;
+	text-decoration: none;
+	width: 250px;
+    margin: auto;
+	padding: 1rem 4rem;
+    font-size: small;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	border-radius: 100vh;
+	transition: 0.5s;
+}
+.Button:hover {
+    color: #27acd9;
+	background: #fff;
+}
