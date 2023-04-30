@@ -4,11 +4,11 @@ import VirtualProblems  from './VirtualProblems';
 import axios from "axios";
 import "./Home.css"
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Box, Button, Table, TableBody, TableCell, TableHead, TableRow, TextField } from '@mui/material';
 
 
 const Home = ({isAuth,NeedLoad,setNeedLoad}) => {
-    //add dammy data
+    //add dammy data, need delete
     const [problemList,setProblemList] = useState([{
         id:1234,
         title:"Home",
@@ -33,9 +33,13 @@ const Home = ({isAuth,NeedLoad,setNeedLoad}) => {
         id:12345678,
         title:"TEST4",
         difficulty:5000,
-        description:"test data 5"
+        description:"long text... long text... long text... long text... long text... // long text... long text... long text... long text... long text... long text... long text... long text...// long text... long text... long text... long text... long text... long text... long text... long text...  "
     }]);
-    const [VirtualProblemList,setVirtualProblemList] = useState([]);
+    //add dammy, need delete
+    const [VirtualProblemList,setVirtualProblemList] = useState([
+        {name:"test1",url:"https://atcoder.jp/"},
+        {name:"dammy1",url:"https://atcoder.jp/"},
+    ]);
     const [AtcoderUserName,setAtcoderUserName] = useState('');
     const url = "http://127.0.0.1:8000";
     const navigate = useNavigate()
@@ -80,22 +84,39 @@ const Home = ({isAuth,NeedLoad,setNeedLoad}) => {
     }
   return (
     <div className='Home'>
-        <div>
-        <input onChange={(e) => setAtcoderUserName(e.target.value)} placeholder='your atcoder-user-name'></input>
-        <VirtualProblems problems = {VirtualProblemList}></VirtualProblems>
+        <div className="InputUserName">
+        <TextField size="small" onChange={(e) => setAtcoderUserName(e.target.value)} placeholder='your atcoder-user-name' sx={{maxWidth:"30vw"}}/>
+        </div>
+        <div className='VirtualProblemsField'>
+            <Box sx={{display: "flex",flexDirection: "column",alignItems: "center",minWidth:400}}>
+                <VirtualProblems problems = {VirtualProblemList}></VirtualProblems>
+                <Button variant='contained' className='Button' onClick={ () => HandleButtonClick(AtcoderUserName)} >Create Virtual Contest</Button>
+            </Box>
         </div>
         <div>
             <label className='TitleProblemList'>ProblemList</label>
-            <div className='ProblemContainerBack'>
-                <div className='ProblemContainer'>
+            <Box sx={{
+                backgroundColor : "white",
+                minWidth:800,}}>
+                <Table sx={{minWidth:700,}} aria-label="caption table">
+                    <caption>your selected problems</caption>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>title</TableCell>
+                        <TableCell align='right'>difficulty</TableCell>
+                        <TableCell align='right' sx={{textAlign:"center"}}>description</TableCell>
+                        <TableCell align='right'>deleteButton</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody className='ProblemContainer'>
                     {problemList.map((problem_dict) => {
                         return (
                             <Problem key = {problem_dict.id} problem = {problem_dict} id = {problem_dict.id} setNeedLoad={setNeedLoad}></Problem>
                         )
                     })}
-                </div>
-            </div>
-            <Button variant='contained' className='Button' onClick={ () => HandleButtonClick(AtcoderUserName)} >Create Virtual Contest</Button>
+                </TableBody>
+                </Table>
+            </Box>
         </div>
     </div>
   )

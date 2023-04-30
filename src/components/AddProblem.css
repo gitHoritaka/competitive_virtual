@@ -21,7 +21,6 @@ p {
     margin: auto;
     background: rgba(255, 255, 255, 0.1); /* 透明度を10%に設定 */
     position: relative;
-    border-radius: 20px;
     overflow: hidden; /* cardクラスのfilterによりぼかしではみ出る場所を隠す場合 */
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* ボックスに影を入れる */
     border: 1px solid rgba(255, 255, 255, 0.1); /* 白の透明度の高い枠線を入れる */

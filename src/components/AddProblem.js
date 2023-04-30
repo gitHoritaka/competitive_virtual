@@ -47,7 +47,7 @@ const AddProblem = ({isAuth,setNeedLoad}) => {
           </div>
           <div>
               <p>description</p>
-              <TextField name = "description" type = 'text' planholder = 'describe' onChange = {(event) => setDescription(event.target.value)}></TextField>
+              <TextField name = "description" type = 'text' placeholder = 'white your comment to the problem' onChange = {(event) => setDescription(event.target.value)}></TextField>
           </div>
           <div>
               <p>dificulty</p>

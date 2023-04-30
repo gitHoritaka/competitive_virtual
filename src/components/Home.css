@@ -1,6 +1,3 @@
-.ProblemContainerBack{
-    background-color: gray;
-}
 
 .ProblemContainer {
     display: flex;
@@ -12,7 +9,7 @@
     overflow-x: scroll;
 }
 .TitleProblemList{
-    color: black;
+    color: white;
     font-weight: large;
 }
 .Home{
@@ -36,4 +33,8 @@
 .Button:hover {
     color: #27acd9;
 	background: #fff;
+}
+
+.InputUserName{
+    text-align: right;
 }

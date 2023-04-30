@@ -3,6 +3,7 @@ import React from 'react'
 import { auth, provider } from '../firebase'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
+import "./Login.css"
 
 const Login = ({setIsAuth}) => {
     const navigate = useNavigate();//useNavigateはcallback function内で呼び出せない
@@ -17,9 +18,9 @@ const Login = ({setIsAuth}) => {
         });
     }
   return (
-    <div>
+    <div className='LoginField'>
         <p>login</p>
-        <Button onClick={SignInWithGogle}>sign in with google</Button>
+        <Button variant='contained' onClick={SignInWithGogle}>sign in with google</Button>
     </div>
   )
 }
