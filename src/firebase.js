@@ -11,6 +11,8 @@ const firebaseConfig = {
   collection_name:process.env.REACT_APP_FIREBASE_COLLECTION_NAME,
 };
 //
+
+//////////////////////// firebaseConfig //////////////////////////
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
