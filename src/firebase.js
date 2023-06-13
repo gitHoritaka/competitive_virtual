@@ -1,3 +1,4 @@
+
 import { initializeApp } from 'firebase/app';
 import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import {getFirestore} from "firebase/firestore";
@@ -10,7 +11,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_SENDER_ID,
   collection_name:process.env.REACT_APP_FIREBASE_COLLECTION_NAME,
 };
-//
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();

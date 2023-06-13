@@ -4,6 +4,7 @@ import {auth, db} from "../firebase"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './AddProblem.css'
+import { Button, TextField } from '@mui/material'
 
 const AddProblem = ({isAuth,setNeedLoad}) => {
   const navigate = useNavigate();
@@ -34,29 +35,28 @@ const AddProblem = ({isAuth,setNeedLoad}) => {
     navigate("/");
   };
   return (
-    <div >
+    <div className='AddProblemBack'>
       <form className = 'register_card' onSubmit = {HandleSubmit}>
           <div>
               <p>input url</p>
-              <input name = "problem_url" type="url" placeholder = "add url" onChange={(event) => setURL(event.target.value)}  />
+              <TextField name = "problem_url" type="url" placeholder = "add url" onChange={(event) => setURL(event.target.value)}  />
           </div>
           <div>
               <p>title</p>
-              <input name = 'problem_title' type = 'text' placeholder="title" onChange={(event) => setTitle(event.target.value)} ></input>
+              <TextField name = 'problem_title' type = 'text' placeholder="title" onChange={(event) => setTitle(event.target.value)} ></TextField>
           </div>
           <div>
               <p>description</p>
-              <input name = "description" type = 'text' planholder = 'describe' onChange = {(event) => setDescription(event.target.value)}></input>
+              <TextField name = "description" type = 'text' placeholder = 'white your comment to the problem' onChange = {(event) => setDescription(event.target.value)}></TextField>
           </div>
           <div>
               <p>dificulty</p>
-              <input type = 'number' placeholder='dificulty'  onChange = {(event) => setDeficulty(event.target.value)}></input>
+              <TextField type = 'number' placeholder='dificulty'  onChange = {(event) => setDeficulty(event.target.value)}></TextField>
           </div>
           <div>
             <p></p>
-              <button tyoe = 'submit'>register</button>
+              <Button variant='contained' type = 'submit'>register</Button>
           </div>
-
       </form> 
   </div>
   )

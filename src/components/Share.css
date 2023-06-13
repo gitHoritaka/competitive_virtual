@@ -1,0 +1,11 @@
+.back{
+  height: 100vh;
+  background-color: black;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import "./Problem.css"
+import { Button, Card, CardActions, CardContent, Link, TableCell, TableRow, Typography } from '@mui/material';
 
 const Problem = ({problem,id,setNeedLoad}) => {
     const HandleDalete = async (id)=>{
@@ -15,14 +16,25 @@ const Problem = ({problem,id,setNeedLoad}) => {
             });
           setNeedLoad(true);
     }
+    //color dict
     return (
-    <div className='card'>
-        <label>{problem.dificulty}</label>
+    /*<div className='card'>
+        <label>{problem.difficulty}</label>
         <label className= 'title'>{problem.title}</label>
         <button className = 'deleteButton' onClick={() =>HandleDalete(id)}>delete</button>
         <br></br>
         <label className = 'description'>{problem.description}</label>
-    </div>
+    </div>*/
+    <TableRow key={problem.title}>
+      <TableCell component="th" space="row">
+        <Link href="https://atcoder.jp/" target='_blank'>{problem.title}</Link>
+      </TableCell>
+      <TableCell align="right">{problem.difficulty}</TableCell>
+      <TableCell align="right" sx={{textAlign:"center", overflow:"hidden"}}>{problem.description}</TableCell>
+      <TableCell align="right">
+        <Button onClick={() =>HandleDalete(id)}>delete</Button>
+      </TableCell>
+    </TableRow>
   )
 };
 
